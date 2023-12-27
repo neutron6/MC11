@@ -81,7 +81,7 @@ pipeline{
                     mvnBuild()
                 }
             }
-        }*/
+        }
         stage('Docker Image Build'){
         when { expression { params.action == 'create' } }   
             steps{
@@ -90,6 +90,17 @@ pipeline{
                 script{
                      
                     dockerBuild("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
+                }
+            }
+        }*/
+        stage('Docker Image Build'){
+        when { expression { params.action == 'create' } }   
+            steps{
+                
+                
+                script{
+                     
+                    bat 'docker build -t mc11/mc11parent-1.0-SNAPSHOT-jar-with-dependencies .'
                 }
             }
         }
