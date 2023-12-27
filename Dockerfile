@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
-WORKDIR /app
-COPY ./target/*.jar /app.jar
-CMD ["java", "-jar", "/app.jar"] 
+FROM openjdk:8
+EXPOSE 8089
+ADD ./target/*.jar mc11parent-1.0-SNAPSHOT-jar-with-dependencies.jar
+ENTRYPOINT ["java", "-jar", "/mc11parent-1.0-SNAPSHOT-jar-with-dependencies.jar"] 
