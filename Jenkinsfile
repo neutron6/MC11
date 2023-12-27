@@ -2,8 +2,14 @@
 pipeline{
     agent any
     
-    stages{
+    parameters{
+         
+         choice(name: 'action',choices: 'create\ndelete',description: 'Choose create/Destroy')
+    }
     
+    stages{
+        when { expression { param.action == 'create' } }
+        
         stage('Git Checkout'){
            
             steps{
@@ -19,7 +25,8 @@ pipeline{
             }
         }
         stage('Unit Test Maven'){
-           
+        
+        when { expression { param.action == 'create' } }
             steps{
                 
                 
@@ -30,13 +37,24 @@ pipeline{
             }
         }
         stage('Integration Test Maven'){
-           
+        when { expression { param.action == 'create' } }   
             steps{
                 
                 
                 script{
                 
                     mvnIntegrationTest()
+                }
+            }
+        }
+        stage('Static code analysis: Sonarqube'){
+        when { expression { param.action == 'create' } }   
+            steps{
+                
+                
+                script{
+                
+                    staticCodeAnalysis()
                 }
             }
         }
