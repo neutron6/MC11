@@ -1,3 +1,4 @@
+@Library('my-shared-library') _
 pipeline{
     agent any
     
@@ -10,7 +11,10 @@ pipeline{
                 
                 script{
                 
-                     git branch: 'master', url: 'https://github.com/neutron6/MC11.git'
+                    gitCheckout(
+                      branch: "master",
+                      url: "https://github.com/neutron6/MC11.git"
+                    )
                 }
             }
         }
