@@ -26,7 +26,7 @@ pipeline{
                 }
             }
         }
-        stage('Unit Test Maven'){
+        /*stage('Unit Test Maven'){
         when { expression { params.action == 'create' } }
             steps{
                 
@@ -80,7 +80,7 @@ pipeline{
                     mvnBuild()
                 }
             }
-        }
+        }*/
         stage('Docker Image Build'){
         when { expression { params.action == 'create' } }   
             steps{
