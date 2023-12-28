@@ -93,7 +93,7 @@ pipeline{
                 
                 script{
                      
-                    bat "docker build -t mc11/mc11parent-1.0-snapshot-jar-with-dependencies ."
+                    bat "docker build -t mc11/mc11parent-1.0-SNAPSHOT-jar-with-dependencies ."
                 }
             }
         }
