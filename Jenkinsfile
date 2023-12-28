@@ -103,8 +103,9 @@ pipeline{
                 
                 
                 script{
-                     
-                    bat "docker push mc11/mc11parent-1.0-snapshot-jar-with-dependencies"
+                    withDockerRegistry(credentialsId:"Rushi@12345"){
+                       bat "docker push mc11/mc11parent-1.0-snapshot-jar-with-dependencies" 
+                    }                    
                 }
             }
         }
