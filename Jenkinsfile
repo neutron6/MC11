@@ -104,7 +104,7 @@ pipeline{
                 
                 script{
                    withCredentials([string(credentialsId: 'dockerhub-pwd2', variable: 'dockerhubpwd')]){
-                       bat 'docker login -u rushikeshnichit -p ${dockerhubpwd}' 
+                       bat "docker login -u rushikeshnichit -p ${dockerhubpwd}" 
                     }
                     bat "docker push rushikeshnichit/mc11parent-1.0-snapshot-jar-with-dependencies"                    
                 }
