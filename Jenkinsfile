@@ -93,10 +93,11 @@ pipeline{
                 
                 script{
                      
-                    bat "docker build -t mc11/mc11parent-1.0-snapshot-jar-with-dependencies ."
+                    bat "docker build -t dockerlauncher/dockerlauncher-3.1.7-SNAPSHOT-jar-with-dependencies ."
                 }
             }
         }
+        /*
         stage('Docker Build and Push'){
         when { expression { params.action == 'create' } }   
             steps{
@@ -109,6 +110,6 @@ pipeline{
                     bat "docker push mc11/mc11parent-1.0-snapshot-jar-with-dependencies"                    
                 }
             }
-        }
+        }*/
     }
 }
