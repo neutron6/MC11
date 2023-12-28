@@ -103,9 +103,10 @@ pipeline{
                 
                 
                 script{
-                    withDockerRegistry(credentialsId:"rushikeshnichit"){
-                       bat "docker push rushikeshnichit/mc11parent-1.0-snapshot-jar-with-dependencies:latest" 
-                    }                    
+                    withCredentials([string(credentialsId:'Rushi@12345', variable: 'Rushi@12345')]){
+                       bat 'docker login -u rushikeshnichit -p ${Rushi@12345}' 
+                    }
+                    bat 'docker push rushikeshnichit/mc11parent-1.0-snapshot-jar-with-dependencies'                    
                 }
             }
         }
