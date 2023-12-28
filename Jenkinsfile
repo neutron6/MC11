@@ -93,7 +93,7 @@ pipeline{
                 
                 script{
                      
-                    bat 'docker build -t mc11/dockerlauncher-3.1.7-SNAPSHOT .'
+                    bat "docker build -t docker/dockerlauncher-3.1.7-SNAPSHOT ."
                 }
             }
         }
