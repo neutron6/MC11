@@ -93,7 +93,7 @@ pipeline{
                 
                 script{
                      
-                    bat "mc11/dockerlauncher-3.1.7-SNAPSHOT-jar-with-dependencies ."
+                    bat "dockerlauncher/dockerlauncher:3.1.7-SNAPSHOT-jar-with-dependencies ."
                 }
             }
         }
