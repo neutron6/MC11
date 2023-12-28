@@ -103,7 +103,7 @@ pipeline{
                 
                 
                 script{
-                    withCredentials([string(credentialsId:'Rushi@12345', variable: 'Rushi@12345')]){
+                    withCredentials([string(credentialsId:'rushikeshnichit', variable: 'Rushi@12345')]){
                        bat 'docker login -u rushikeshnichit -p ${Rushi@12345}' 
                     }
                     bat 'docker push rushikeshnichit/mc11parent-1.0-snapshot-jar-with-dependencies'                    
